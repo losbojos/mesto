@@ -1,5 +1,5 @@
 /* FIGMA 320 design (default) */
-.profile__job {
+.profile__about {
     margin: 9px 0 0;
 
     font-weight: 400;
@@ -10,14 +10,14 @@
 
 /* NO FIGMA design */
 @media screen and (min-width: 768px) {
-    .profile__job {
+    .profile__about {
         margin: 10px 0 0;
     }
 }
 
 /* FIGMA 1280 */
 @media screen and (min-width: 1024px) {
-    .profile__job {
+    .profile__about {
         margin: 10px 0 0;
 
         font-size: 18px;
