@@ -1,0 +1,27 @@
+/* FIGMA 320 design (default) */
+.profile__job {
+    margin: 14px 0 0;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+
+/* NO FIGMA design */
+@media screen and (min-width: 768px) {
+    .profile__job {
+        margin: 10px 0 0;
+    }
+}
+
+/* FIGMA 1280 */
+@media screen and (min-width: 1024px) {
+    .profile__job {
+        margin: 10px 0 0;
+
+        font-size: 18px;
+        line-height: 22px;
+        text-align: left;
+    }
+}

@@ -1,0 +1,26 @@
+/* FIGMA 320 design (default) */
+.header {
+    width: 100%;
+    max-width: 880px;
+    min-height: 56px;
+    margin: 28px auto 0;
+
+    border-bottom: 1px solid rgba(54, 54, 54, .7);
+    box-sizing: border-box;
+}
+
+/* NO FIGMA design */
+@media screen and (min-width: 768px) {
+    .header {
+        min-height: 64px;
+        margin: 35px auto 0;
+    }
+}
+
+/* FIGMA 1280 */
+@media screen and (min-width: 1024px) {
+    .header {
+        min-height: 74px;
+        margin: 45px auto 0;
+    }
+}

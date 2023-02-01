@@ -1,0 +1,6 @@
+.profile__add-button-image {
+    width: 22px;
+    height: 22px;
+    top: calc(50% - 11px);
+    left: calc(50% - 11px);
+}

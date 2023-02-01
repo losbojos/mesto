@@ -1,0 +1,6 @@
+.profile__edit-button-image {
+    width: 10px;
+    height: 10px;
+    top: calc(50% - 5px);
+    left: calc(50% - 5px);
+}
