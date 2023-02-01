@@ -1,17 +1,31 @@
 /* FIGMA 320 design (default) */
 .profile__edit-button {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
+    margin: 10px 0 0 10px;
+
     box-sizing: border-box;
     border: 1px solid #FFFFFF;
     background: transparent;
     background-color: transparent;
     padding: 0;
-    margin: 10px 0 0 18px;
+    position: absolute;
 }
 
 /* NO FIGMA design */
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    .profile__edit-button {
+        width: 21px;
+        height: 21px;
+        margin: 10px 0 0 14px;
+    }
+}
 
 /* FIGMA 1280 */
-@media screen and (min-width: 1024px) {}
+@media screen and (min-width: 1024px) {
+    .profile__edit-button {
+        width: 24px;
+        height: 24px;
+        margin: 18px 0 0 18px;
+    }
+}

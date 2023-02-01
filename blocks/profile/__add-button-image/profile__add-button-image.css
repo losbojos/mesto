@@ -1,6 +1,22 @@
+/* FIGMA 320 design (default) */
 .profile__add-button-image {
-    width: 22px;
-    height: 22px;
-    top: calc(50% - 11px);
-    left: calc(50% - 11px);
+    width: 16px;
+    height: 16px;
+    top: calc(50% - 8px);
+    left: calc(50% - 8px);
+}
+
+/* NO FIGMA design */
+@media screen and (min-width: 768px) {
+    .profile__add-button-image {}
+}
+
+/* FIGMA 1280 */
+@media screen and (min-width: 1024px) {
+    .profile__add-button-image {
+        width: 22px;
+        height: 22px;
+        top: calc(50% - 11px);
+        left: calc(50% - 11px);
+    }
 }
