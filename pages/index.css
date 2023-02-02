@@ -16,6 +16,10 @@
 
 /********************************************************************************/
 
+@import url("../blocks/cursor-pointer/cursor-pointer.css");
+
+/********************************************************************************/
+
 @import url("../blocks/footer/footer.css");
 @import url("../blocks/footer/__copyright/footer__copyright.css");
 
@@ -40,3 +44,14 @@
 @import url("../blocks/profile/__info/profile__info.css");
 @import url("../blocks/profile/__about/profile__about.css");
 @import url("../blocks/profile/__name/profile__name.css");
+
+/********************************************************************************/
+
+@import url("../blocks/popup-edit-profile/popup-edit-profile.css");
+@import url("../blocks/form-edit-profile/form-edit-profile.css");
+@import url("../blocks/form-edit-profile/__button-close/form-edit-profile__button-close.css");
+@import url("../blocks/form-edit-profile/__button-save/form-edit-profile__button-save.css");
+@import url("../blocks/form-edit-profile/__input/form-edit-profile__input.css");
+@import url("../blocks/form-edit-profile/__input/_var/_about/form-edit-profile__input_var_about.css");
+@import url("../blocks/form-edit-profile/__input/_var/_name/form-edit-profile__input_var_name.css");
+@import url("../blocks/form-edit-profile/__title/form-edit-profile__title.css");

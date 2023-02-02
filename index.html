@@ -24,13 +24,13 @@
             </div>
             <div class="profile__info">
                 <p class="profile__name">Жак-Ив Кусто
-                    <button class="profile__edit-button">
+                    <button class="profile__edit-button cursor-pointer">
                         <img src="./images/edit-button.svg" alt="Перо" class="profile__edit-button-image">
                     </button>
                 </p>
                 <p class="profile__about">Исследователь океана</p>
             </div>
-            <button class="profile__add-button">
+            <button class="profile__add-button cursor-pointer">
                 <img src="./images/add-button.svg" alt="Плюсик" class="profile__add-button-image">
             </button>
         </section>
@@ -82,6 +82,18 @@
     <footer class="footer">
         <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
+
+    <section class="popup-edit-profile">
+        <form class="form-edit-profile">
+            <button class="form-edit-profile__button-close cursor-pointer"></button>
+            <h2 class="form-edit-profile__title">Редактировать профиль</h2>
+            <input type="text" class="form-edit-profile__input form-edit-profile__input_var_name"
+                value="Бармалей"></input>
+            <input type="text" class="form-edit-profile__input form-edit-profile__input_var_about"
+                value="Из Африки"></input>
+            <button class="form-edit-profile__button-save cursor-pointer">Сохранить</button>
+        </form>
+    </section>
 
 </body>
 

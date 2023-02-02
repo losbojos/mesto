@@ -1,0 +1,15 @@
+.form-edit-profile__button-close {
+    width: 20px;
+    height: 20px;
+    background-image: url(../../../images/close-icon.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: contain;
+
+    position: absolute;
+    top: -36px;
+    right: 0;
+    border: none;
+    padding: 0;
+
+}
