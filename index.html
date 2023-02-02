@@ -23,7 +23,11 @@
                 <img src="./images/jak-iv-kusto.png" alt="Аватар профиля" class="profile__avatar-image">
             </div>
             <div class="profile__info">
-                <p class="profile__name">Жак-Ив Кусто
+                <p class="profile__name">
+                    <!-- Span необходим для замены текста из JS, не потеряв при замене дочернюю к параграфу кнопку -->
+                    <span id="profile__name-text_id">Жак-Ив Кусто</span>
+                    <!-- Кнопка сделана дочерней к параграфу, чтобы спозиционировать ее абсолютно относительно конца текста, 
+                            при этом чтобы она не учитывалась при выравнивании параграфа по центру как в дизайне MOBILE -->
                     <button class="profile__edit-button cursor-pointer">
                         <img src="./images/edit-button.svg" alt="Перо" class="profile__edit-button-image">
                     </button>
@@ -85,15 +89,19 @@
 
     <section class="popup-edit-profile">
         <form class="form-edit-profile">
-            <button class="form-edit-profile__button-close cursor-pointer"></button>
+            <!-- <button class="form-edit-profile__button-close cursor-pointer"></button> -->
+            <input type="reset" value="" class="form-edit-profile__button-close cursor-pointer"></input>
             <h2 class="form-edit-profile__title">Редактировать профиль</h2>
             <input type="text" class="form-edit-profile__input form-edit-profile__input_var_name"
                 value="Бармалей"></input>
             <input type="text" class="form-edit-profile__input form-edit-profile__input_var_about"
                 value="Из Африки"></input>
-            <button class="form-edit-profile__button-save cursor-pointer">Сохранить</button>
+            <!-- <button class="form-edit-profile__button-save cursor-pointer">Сохранить</button> -->
+            <input type="submit" value="Сохранить" class="form-edit-profile__button-save cursor-pointer" />
         </form>
     </section>
+
+    <script src="./scripts/index.js"></script>
 
 </body>
 
