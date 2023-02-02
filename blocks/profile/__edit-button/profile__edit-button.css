@@ -9,7 +9,10 @@
     background: transparent;
     background-color: transparent;
     padding: 0;
+
     position: absolute;
+    left: 100%;
+    top: 0;
 }
 
 .profile__edit-button:hover {
