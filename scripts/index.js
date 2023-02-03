@@ -4,8 +4,8 @@ const profileAbout = document.querySelector(".profile__about");
 
 const popupEditProfile = document.querySelector(".popup-edit-profile");
 const closeButton = popupEditProfile.querySelector(".form-edit-profile__button-close");
-const inputName = popupEditProfile.querySelector(".form-edit-profile__input_var_name");
-const inputAbout = popupEditProfile.querySelector(".form-edit-profile__input_var_about");
+const inputName = document.getElementById("form-edit-profile__input-name-id");
+const inputAbout = document.getElementById("form-edit-profile__input-about-id");
 const formElement = popupEditProfile.querySelector(".form-edit-profile");
 
 const toggleOpenPopup = () => {

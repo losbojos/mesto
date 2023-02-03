@@ -53,6 +53,4 @@
 @import url("../blocks/form-edit-profile/__button-close/form-edit-profile__button-close.css");
 @import url("../blocks/form-edit-profile/__button-save/form-edit-profile__button-save.css");
 @import url("../blocks/form-edit-profile/__input/form-edit-profile__input.css");
-@import url("../blocks/form-edit-profile/__input/_var/_about/form-edit-profile__input_var_about.css");
-@import url("../blocks/form-edit-profile/__input/_var/_name/form-edit-profile__input_var_name.css");
 @import url("../blocks/form-edit-profile/__title/form-edit-profile__title.css");
