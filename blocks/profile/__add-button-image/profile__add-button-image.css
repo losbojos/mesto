@@ -7,9 +7,7 @@
 }
 
 /* NO FIGMA design */
-@media screen and (min-width: 768px) {
-    .profile__add-button-image {}
-}
+@media screen and (min-width: 768px) {}
 
 /* FIGMA 1280 */
 @media screen and (min-width: 1024px) {

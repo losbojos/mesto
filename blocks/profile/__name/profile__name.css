@@ -9,6 +9,9 @@
     text-align: center;
 
     position: relative;
+
+    display: flex;
+    flex-direction: row;
 }
 
 /* NO FIGMA design */
