@@ -5,3 +5,7 @@
     padding: 5px 5px 1px;
     box-sizing: content-box;
 }
+
+.cards__like:hover {
+    opacity: 0.5;
+}
