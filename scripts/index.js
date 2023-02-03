@@ -11,35 +11,20 @@ const formElement = popupEditProfile.querySelector(".form-edit-profile");
 const toggleOpenPopup = () => {
   let isOpened = popupEditProfile.classList.toggle("popup-edit-profile_opened");
   if (isOpened) {
-    // console.log('isOpened');
     inputName.value = profileNameText.textContent;
     inputAbout.value = profileAbout.textContent;
   }
-  else {
-    // console.log('is not Opened');
-  }
-};
-
-const handleEditButtonClick = () => {
-  toggleOpenPopup();
-};
-
-const handleCloseButtonClick = () => {
-  // console.log('handleCloseButtonClick');
-  toggleOpenPopup();
 };
 
 function handleFormSubmit(evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.  
-
-  // console.log('handleFormSubmit');
 
   profileNameText.textContent = inputName.value;
   profileAbout.textContent = inputAbout.value;
   toggleOpenPopup();
 }
 
-editButton.addEventListener("click", handleEditButtonClick);
-closeButton.addEventListener("click", handleCloseButtonClick);
+editButton.addEventListener("click", toggleOpenPopup);
+closeButton.addEventListener("click", toggleOpenPopup);
 formElement.addEventListener("submit", handleFormSubmit);
 
