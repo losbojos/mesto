@@ -1,5 +1,5 @@
 .profile__avatar {
-    width: 120px;
+    min-width: 120px;
     aspect-ratio: 1 / 1;
     margin: 0;
     overflow: hidden;

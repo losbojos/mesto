@@ -6,6 +6,7 @@
 
     margin: 26px auto 0;
     padding: 0;
+    max-width: 80%;
 }
 
 /* NO FIGMA design */
@@ -13,6 +14,7 @@
     .profile__info {
         margin: 0 30px;
         align-items: flex-start;
+        max-width: 67%;
     }
 }
 
