@@ -23,53 +23,54 @@
             <div class="profile__info">
                 <div class="profile__name-container">
                     <h1 class="profile__name overflow-ellipsis">Жак-Ив Кусто</h1>
-                    <button type="button" class="profile__edit-button cursor-pointer"></button>
+                    <button type="button" aria-label="Редактировать профиль"
+                        class="profile__edit-button cursor-pointer"></button>
                 </div>
                 <p class="profile__about overflow-ellipsis">Исследователь океана</p>
             </div>
-            <button type="button" class="profile__add-button cursor-pointer"></button>
+            <button type="button" aria-label="Добавить фото" class="profile__add-button cursor-pointer"></button>
         </section>
         <section class="cards">
             <article class="cards__card">
                 <img src="./images/foto-rostov-velikiy.jpg" alt="фотография" class="cards__foto">
                 <div class="cards__caption-container">
                     <h2 class="cards__caption overflow-ellipsis">Ростов Великий</h2>
-                    <button type="button" class="cards__like cursor-pointer"></button>
+                    <button type="button" aria-label="Поставить лайк" class="cards__like cursor-pointer"></button>
                 </div>
             </article>
             <article class="cards__card">
                 <img src="./images/foto-elbrus.jpg" alt="фотография" class="cards__foto">
                 <div class="cards__caption-container">
                     <h2 class="cards__caption overflow-ellipsis">Гора Эльбрус</h2>
-                    <button type="button" class="cards__like cursor-pointer"></button>
+                    <button type="button" aria-label="Поставить лайк" class="cards__like cursor-pointer"></button>
                 </div>
             </article>
             <article class="cards__card">
                 <img src="./images/foto-dombay.png" alt="фотография" class="cards__foto">
                 <div class="cards__caption-container">
                     <h2 class="cards__caption overflow-ellipsis">Домбай</h2>
-                    <button type="button" class="cards__like cursor-pointer"></button>
+                    <button type="button" aria-label="Поставить лайк" class="cards__like cursor-pointer"></button>
                 </div>
             </article>
             <article class="cards__card">
                 <img src="./images/foto-beluha.jpg" alt="фотография" class="cards__foto">
                 <div class="cards__caption-container">
                     <h2 class="cards__caption overflow-ellipsis">Гора Белуха</h2>
-                    <button type="button" class="cards__like cursor-pointer"></button>
+                    <button type="button" aria-label="Поставить лайк" class="cards__like cursor-pointer"></button>
                 </div>
             </article>
             <article class="cards__card">
                 <img src="./images/foro-yarovoe.jpg" alt="фотография" class="cards__foto">
                 <div class="cards__caption-container">
                     <h2 class="cards__caption overflow-ellipsis">Яровое</h2>
-                    <button type="button" class="cards__like cursor-pointer"></button>
+                    <button type="button" aria-label="Поставить лайк" class="cards__like cursor-pointer"></button>
                 </div>
             </article>
             <article class="cards__card">
                 <img src="./images/foto-karachaevo-cherkessia.jpg" alt="фотография" class="cards__foto">
                 <div class="cards__caption-container">
                     <h2 class="cards__caption overflow-ellipsis">Карачаево-Черкессия</h2>
-                    <button type="button" class="cards__like cursor-pointer"></button>
+                    <button type="button" aria-label="Поставить лайк" class="cards__like cursor-pointer"></button>
                 </div>
             </article>
         </section>
@@ -82,13 +83,15 @@
     <section class="popup-edit-profile">
         <div class="profile-editor">
             <form class="form-edit-profile" name="form-edit-profile">
-                <input type="reset" value="" class="form-edit-profile__button-close cursor-pointer">
+                <input type="reset" value="" aria-label="Закрыть без сохранения изменений"
+                    class="form-edit-profile__button-close cursor-pointer">
                 <h2 class="form-edit-profile__title">Редактировать профиль</h2>
                 <input type="text" class="form-edit-profile__input" value="[Имя]" id="form-edit-profile__input-name-id"
                     name="profile-name">
                 <input type="text" class="form-edit-profile__input" value="[О себе]"
                     id="form-edit-profile__input-about-id" name="profile-about">
-                <input type="submit" value="Сохранить" class="form-edit-profile__button-save cursor-pointer">
+                <input type="submit" value="Сохранить" aria-label="Закрыть изменения"
+                    class="form-edit-profile__button-save cursor-pointer">
             </form>
         </div>
 
