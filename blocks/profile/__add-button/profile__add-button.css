@@ -11,6 +11,12 @@
     background: transparent;
     background-color: transparent;
     padding: 0;
+
+    background-image: url(../../../images/add-button.svg);
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: center;
+    background-color: transparent;
 }
 
 .profile__add-button:hover {
@@ -27,4 +33,8 @@
 }
 
 /* FIGMA 1280 */
-@media screen and (min-width: 1024px) {}
+@media screen and (min-width: 1024px) {
+    .profile__add-button {
+        background-size: 22px 22px;
+    }
+}
