@@ -47,6 +47,7 @@
 
 @import url("../blocks/popup-edit-profile/popup-edit-profile.css");
 @import url("../blocks/popup-edit-profile/_opened/popup-edit-profile_opened.css");
+@import url("../blocks/profile-editor/profile-editor.css");
 @import url("../blocks/form-edit-profile/form-edit-profile.css");
 @import url("../blocks/form-edit-profile/__button-close/form-edit-profile__button-close.css");
 @import url("../blocks/form-edit-profile/__button-save/form-edit-profile__button-save.css");

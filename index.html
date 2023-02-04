@@ -80,15 +80,18 @@
     </footer>
 
     <section class="popup-edit-profile">
-        <form class="form-edit-profile">
-            <input type="reset" value="" class="form-edit-profile__button-close cursor-pointer">
-            <h2 class="form-edit-profile__title">Редактировать профиль</h2>
-            <input type="text" class="form-edit-profile__input" value="[Имя]" id="form-edit-profile__input-name-id"
-                name="profile-name">
-            <input type="text" class="form-edit-profile__input" value="[О себе]" id="form-edit-profile__input-about-id"
-                name="profile-about">
-            <input type="submit" value="Сохранить" class="form-edit-profile__button-save cursor-pointer">
-        </form>
+        <div class="profile-editor">
+            <form class="form-edit-profile" name="form-edit-profile">
+                <input type="reset" value="" class="form-edit-profile__button-close cursor-pointer">
+                <h2 class="form-edit-profile__title">Редактировать профиль</h2>
+                <input type="text" class="form-edit-profile__input" value="[Имя]" id="form-edit-profile__input-name-id"
+                    name="profile-name">
+                <input type="text" class="form-edit-profile__input" value="[О себе]"
+                    id="form-edit-profile__input-about-id" name="profile-about">
+                <input type="submit" value="Сохранить" class="form-edit-profile__button-save cursor-pointer">
+            </form>
+        </div>
+
     </section>
 
     <script src="./scripts/index.js"></script>
