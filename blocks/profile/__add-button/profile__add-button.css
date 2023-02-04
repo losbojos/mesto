@@ -8,8 +8,6 @@
     box-sizing: border-box;
     border: 2px solid #FFFFFF;
     border-radius: 2px;
-    background: transparent;
-    background-color: transparent;
     padding: 0;
 
     background-image: url(../../../images/add-button.svg);
