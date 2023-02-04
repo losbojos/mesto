@@ -21,13 +21,10 @@
         <section class="profile">
             <img src="./images/jak-iv-kusto.png" alt="Аватар профиля" class="profile__avatar">
             <div class="profile__info">
-                <h1 class="profile__name">
-                    <!-- Span необходим для замены текста из JS, не потеряв при замене дочернюю к параграфу кнопку -->
-                    <span id="profile__name-text_id">Жак-Ив Кусто</span>
-                    <!-- Кнопка сделана дочерней к параграфу, чтобы спозиционировать ее абсолютно относительно конца текста, 
-                            при этом чтобы она не учитывалась при выравнивании параграфа по центру как в дизайне MOBILE -->
+                <div class="profile__name-container">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
                     <button class="profile__edit-button cursor-pointer"></button>
-                </h1>
+                </div>
                 <h2 class="profile__about">Исследователь океана</h2>
             </div>
             <button class="profile__add-button cursor-pointer">
