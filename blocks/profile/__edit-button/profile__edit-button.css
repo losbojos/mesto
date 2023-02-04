@@ -9,7 +9,8 @@
     aspect-ratio: 1 / 1;
 
     position: absolute;
-    left: calc(100% - 18px);
+    left: calc(100% - 18px - 10px);
+    /* Отнять ширину самой кнопки и margin слева */
     top: 0;
 
     background-image: url(../../../images/edit-button.svg);
