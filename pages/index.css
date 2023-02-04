@@ -53,7 +53,9 @@
 @import url("../blocks/form-edit-profile/__button-save/form-edit-profile__button-save.css");
 @import url("../blocks/form-edit-profile/__input/form-edit-profile__input.css");
 @import url("../blocks/form-edit-profile/__title/form-edit-profile__title.css");
+@import url("../blocks/form-edit-profile/__input-li/form-edit-profile__input-li.css");
 
 /********************************************************************************/
 
 @import url("../blocks/overflow-ellipsis/overflow-ellipsis.css");
+@import url("../blocks/simple-list/simple-list.css");
