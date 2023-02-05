@@ -83,27 +83,14 @@
     <section class="popup-edit-profile">
         <div class="profile-editor">
             <form class="form-edit-profile" name="form-edit-profile">
-                <input type="reset" value="" aria-label="Закрыть без сохранения изменений"
-                    class="form-edit-profile__button-close cursor-pointer">
+                <button type="reset" aria-label="Закрыть без сохранения изменений"
+                    class="form-edit-profile__button-close cursor-pointer"></button>
                 <h2 class="form-edit-profile__title">Редактировать профиль</h2>
-                /*
-                Обернул в список 2 инпута, т.к. без этого не срабатывал псевдокласс
-                .form-edit-profile__input:first-of-type
-                для выставления разных отступов сверху у текстовых инпутов.
-                Обсуждение проблемы в пачке: https://app.pachca.com/chats/3673553?message=31744663
-                */
-                <ul class="form-edit-profile__simple-list">
-                    <li class="form-edit-profile__input-li">
-                        <input type="text" class="form-edit-profile__input" value="[Имя]"
-                            id="form-edit-profile__input-name-id" name="profile-name">
-                    </li>
-                    <li class="form-edit-profile__input-li">
-                        <input type="text" class="form-edit-profile__input" value="[О себе]"
-                            id="form-edit-profile__input-about-id" name="profile-about">
-                    </li>
-                </ul>
-                <input type="submit" value="Сохранить" aria-label="Закрыть изменения"
-                    class="form-edit-profile__button-save cursor-pointer">
+                <input type="text" class="form-edit-profile__input" value="[Имя]" id="form-edit-profile__input-name-id"
+                    name="profile-name">
+                <input type="text" class="form-edit-profile__input" value="[О себе]"
+                    id="form-edit-profile__input-about-id" name="profile-about">
+                <button type="submit" class="form-edit-profile__button-save cursor-pointer">Сохранить</button>
             </form>
         </div>
 
