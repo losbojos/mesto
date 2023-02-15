@@ -39,20 +39,34 @@
         <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
 
-    <section class="popup-edit-profile">
+    <section class="popup" id="popup-edit-profile">
         <div class="profile-editor">
             <form class="form-edit-profile" name="form-edit-profile">
                 <button type="reset" aria-label="Закрыть без сохранения изменений"
                     class="form-edit-profile__button-close cursor-pointer"></button>
                 <h2 class="form-edit-profile__title">Редактировать профиль</h2>
-                <input type="text" class="form-edit-profile__input" value="[Имя]" id="form-edit-profile__input-name-id"
-                    name="profile-name">
-                <input type="text" class="form-edit-profile__input" value="[О себе]"
+                <input type="text" class="form-edit-profile__input" value="" placeholder="Имя"
+                    id="form-edit-profile__input-name-id" name="profile-name">
+                <input type="text" class="form-edit-profile__input" value="" placeholder="О себе"
                     id="form-edit-profile__input-about-id" name="profile-about">
                 <button type="submit" class="form-edit-profile__button-save cursor-pointer">Сохранить</button>
             </form>
         </div>
+    </section>
 
+    <section class="popup" id="popup-add-card">
+        <div class="profile-editor">
+            <form class="form-edit-profile" name="form-edit-profile">
+                <button type="reset" aria-label="Закрыть без сохранения изменений"
+                    class="form-edit-profile__button-close cursor-pointer"></button>
+                <h2 class="form-edit-profile__title">Новое место</h2>
+                <input type="text" class="form-edit-profile__input" value="" placeholder="Название"
+                    id="form-edit-profile__input-name-id" name="profile-name">
+                <input type="text" class="form-edit-profile__input" value="" placeholder="Ссылка на картинку"
+                    id="form-edit-profile__input-about-id" name="profile-about">
+                <button type="submit" class="form-edit-profile__button-save cursor-pointer">Создать</button>
+            </form>
+        </div>
     </section>
 
     <template id="card-template">

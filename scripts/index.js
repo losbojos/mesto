@@ -1,79 +1,127 @@
-const editButton = document.querySelector(".profile__edit-button");
-const profileName = document.querySelector(".profile__name");
-const profileAbout = document.querySelector(".profile__about");
+const cardTemplate = document.getElementById("card-template");
+const cards = document.querySelector(".cards");
 
-const popupEditProfile = document.querySelector(".popup-edit-profile");
-const closeButton = popupEditProfile.querySelector(".form-edit-profile__button-close");
-const inputName = document.getElementById("form-edit-profile__input-name-id");
-const inputAbout = document.getElementById("form-edit-profile__input-about-id");
-const formElement = popupEditProfile.querySelector(".form-edit-profile");
+/***********************************************************************************************************************/
 
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: './images/cards/01-Arhiz.jpg'
-  },
-  {
-    name: 'Кузбасс',
-    link: './images/cards/02-Kuzbass.JPG'
-  },
-  {
-    name: 'Новосибирск',
-    link: './images/cards/03-Novosibirsk.jpg'
-  },
-  {
-    name: 'Санкт-Петербург',
-    link: './images/cards/04-Sankt-Peterburg.jpg'
-  },
-  {
-    name: 'Новороссийск',
-    link: './images/cards/05-Novorossiysk.jpg'
-  },
-  {
-    name: 'Алтай',
-    link: './images/cards/06-Altay.JPG'
-  }
-];
+function addCard(aName, aLink, atTheTop) {
+  const newArticle = cardTemplate.content.cloneNode(true);
 
-const toggleOpenPopup = () => {
-  let isOpened = popupEditProfile.classList.toggle("popup-edit-profile_opened");
-  if (isOpened) {
-    inputName.value = profileName.textContent;
-    inputAbout.value = profileAbout.textContent;
-  }
-};
+  const img = newArticle.querySelector('.cards__foto');
+  img.setAttribute('src', aLink);
 
-function handleFormSubmit(evt) {
-  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.  
+  const caption = newArticle.querySelector('.cards__caption');
+  caption.textContent = aName;
 
-  profileName.textContent = inputName.value;
-  profileAbout.textContent = inputAbout.value;
-  toggleOpenPopup();
+  if (atTheTop)
+    cards.prepend(newArticle);
+  else
+    cards.append(newArticle);
 }
 
-function loadInitialCards() {
-  const cards = document.querySelector(".cards");
+/***********************************************************************************************************************/
+
+function initCards() {
+
+  const initialCards = [
+    {
+      name: 'Архыз',
+      link: './images/cards/01-Arhiz.jpg'
+    },
+    {
+      name: 'Кузбасс',
+      link: './images/cards/02-Kuzbass.JPG'
+    },
+    {
+      name: 'Новосибирск',
+      link: './images/cards/03-Novosibirsk.jpg'
+    },
+    {
+      name: 'Санкт-Петербург',
+      link: './images/cards/04-Sankt-Peterburg.jpg'
+    },
+    {
+      name: 'Новороссийск',
+      link: './images/cards/05-Novorossiysk.jpg'
+    },
+    {
+      name: 'Алтай',
+      link: './images/cards/06-Altay.JPG'
+    }
+  ];
+
   cards.innerHTML = "";
 
-  const cardTemplate = document.getElementById("card-template");
-  console.log(cardTemplate);
-
   initialCards.forEach((value) => {
-    const newArticle = cardTemplate.content.cloneNode(true);
-
-    const img = newArticle.querySelector('.cards__foto');
-    img.setAttribute('src', value.link);
-
-    const caption = newArticle.querySelector('.cards__caption');
-    caption.textContent = value.name;
-
-    cards.appendChild(newArticle);
+    addCard(value.name, value.link, false);
   });
-
 }
 
-editButton.addEventListener("click", toggleOpenPopup);
-closeButton.addEventListener("click", toggleOpenPopup);
-formElement.addEventListener("submit", handleFormSubmit);
+/***********************************************************************************************************************/
 
-loadInitialCards();
+function initEditProfilePopup() {
+
+  const profileName = document.querySelector(".profile__name");
+  const profileAbout = document.querySelector(".profile__about");
+  const editProfilePopup = document.querySelector("#popup-edit-profile");
+
+  const inputName = editProfilePopup.querySelector("#form-edit-profile__input-name-id");
+  const inputAbout = editProfilePopup.querySelector("#form-edit-profile__input-about-id");
+  const closeButton = editProfilePopup.querySelector(".form-edit-profile__button-close");
+  const formElement = editProfilePopup.querySelector(".form-edit-profile");
+
+  const toggleOpenPopup = () => {
+    let isOpened = editProfilePopup.classList.toggle("popup_opened");
+    if (isOpened) {
+      inputName.value = profileName.textContent;
+      inputAbout.value = profileAbout.textContent;
+    }
+  };
+
+  const handleFormSubmit = (evt) => {
+    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.  
+
+    profileName.textContent = inputName.value;
+    profileAbout.textContent = inputAbout.value;
+    toggleOpenPopup();
+  }
+
+  document.querySelector(".profile__edit-button").addEventListener("click", toggleOpenPopup);
+  closeButton.addEventListener("click", toggleOpenPopup);
+  formElement.addEventListener("submit", handleFormSubmit);
+}
+
+/***********************************************************************************************************************/
+
+function initAddCardPopup() {
+
+  const popup = document.querySelector("#popup-add-card"); // by id
+
+  const inputImageTitle = popup.querySelector("#form-edit-profile__input-name-id");
+  const inputImageLink = popup.querySelector("#form-edit-profile__input-about-id");
+  const closeButton = popup.querySelector(".form-edit-profile__button-close");
+  const formElement = popup.querySelector(".form-edit-profile");
+
+  const toggleOpenAddCardPopup = () => {
+    popup.classList.toggle("popup_opened");
+  };
+
+  const handleFormSubmit = (evt) => {
+    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.  
+
+    const newImageName = inputImageTitle.value;
+    const newImageLink = inputImageLink.value;
+    addCard(newImageName, newImageLink, true);
+    toggleOpenAddCardPopup();
+  }
+
+  document.querySelector(".profile__add-button").addEventListener("click", toggleOpenAddCardPopup);
+  closeButton.addEventListener("click", toggleOpenAddCardPopup);
+  formElement.addEventListener("submit", handleFormSubmit);
+}
+
+/***********************************************************************************************************************/
+/* Main script */
+
+initCards();
+initEditProfilePopup();
+initAddCardPopup();
