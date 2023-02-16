@@ -59,6 +59,10 @@ function initCards() {
     if (evt.target.classList.contains('cards__like')) {
       evt.target.classList.toggle('cards__like_liked');
     }
+    else if (evt.target.classList.contains('cards__delete')) {
+      const card = evt.target.closest('.cards__card');
+      card.remove();
+    }
   });
 }
 
