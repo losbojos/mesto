@@ -9,6 +9,7 @@
 @import url("../blocks/cards/__card/cards__card.css");
 @import url("../blocks/cards/__foto/cards__foto.css");
 @import url("../blocks/cards/__like/cards__like.css");
+@import url("../blocks/cards/__like/_liked/cards__like_liked.css");
 
 /********************************************************************************/
 

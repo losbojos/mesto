@@ -54,6 +54,12 @@ function initCards() {
   initialCards.forEach((value) => {
     addCard(value.name, value.link, false);
   });
+
+  cards.addEventListener("click", (evt) => {
+    if (evt.target.classList.contains('cards__like')) {
+      evt.target.classList.toggle('cards__like_liked');
+    }
+  });
 }
 
 /***********************************************************************************************************************/
