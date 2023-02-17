@@ -3,6 +3,10 @@
 
 /********************************************************************************/
 
+@import url("../blocks/button-close/button-close.css");
+
+/********************************************************************************/
+
 @import url("../blocks/cards/cards.css");
 @import url("../blocks/cards/__caption/cards__caption.css");
 @import url("../blocks/cards/__caption-container/cards__caption-container.css");
@@ -59,3 +63,13 @@
 /********************************************************************************/
 
 @import url("../blocks/overflow-ellipsis/overflow-ellipsis.css");
+
+/********************************************************************************/
+
+@import url("../blocks/fullimage/fullimage.css");
+@import url("../blocks/fullimage/__caption/fullimage__caption.css");
+@import url("../blocks/fullimage/__figure/fullimage__figure.css");
+@import url("../blocks/fullimage/__image/fullimage__image.css");
+@import url("../blocks/fullimage/__button-close/fullimage__button-close.css");
+
+/********************************************************************************/

@@ -63,6 +63,19 @@ function initCards() {
       const card = evt.target.closest('.cards__card');
       card.remove();
     }
+    else if (evt.target.classList.contains('cards__foto')) {
+      const imgSrc = evt.target.getAttribute('src');
+
+      let sibling = evt.target;
+      do {
+        sibling = sibling.nextElementSibling;
+      }
+      while (sibling && !sibling.classList.contains('cards__caption-container'));
+
+      const imgCaption = sibling.querySelector('.cards__caption').textContent;
+
+      displayImagePopup(imgSrc, imgCaption);
+    }
   });
 }
 
@@ -76,7 +89,7 @@ function initEditProfilePopup() {
 
   const inputName = editProfilePopup.querySelector("#form-edit-profile__input-name-id");
   const inputAbout = editProfilePopup.querySelector("#form-edit-profile__input-about-id");
-  const closeButton = editProfilePopup.querySelector(".form-edit-profile__button-close");
+  const closeButton = editProfilePopup.querySelector(".button-close");
   const formElement = editProfilePopup.querySelector(".form-edit-profile");
 
   const toggleOpenPopup = () => {
@@ -108,7 +121,7 @@ function initAddCardPopup() {
 
   const inputImageTitle = popup.querySelector("#form-edit-profile__input-name-id");
   const inputImageLink = popup.querySelector("#form-edit-profile__input-about-id");
-  const closeButton = popup.querySelector(".form-edit-profile__button-close");
+  const closeButton = popup.querySelector(".button-close");
   const formElement = popup.querySelector(".form-edit-profile");
 
   const toggleOpenAddCardPopup = () => {
@@ -130,8 +143,34 @@ function initAddCardPopup() {
 }
 
 /***********************************************************************************************************************/
+function displayImagePopup(src, caption) {
+  const popup = document.querySelector("#popup-display-image"); // by id
+  const isOpened = popup.classList.toggle("popup_opened");
+
+  if (isOpened) {
+    const imgElement = popup.querySelector('.fullimage__image');
+    imgElement.setAttribute('src', src);
+
+    const captionElement = popup.querySelector('.fullimage__caption');
+    captionElement.textContent = caption;
+  }
+
+}
+
+/***********************************************************************************************************************/
+
+function initDisplayImagePopup() {
+  const popup = document.querySelector("#popup-display-image"); // by id
+  const closeButton = popup.querySelector('.button-close');
+  closeButton.addEventListener("click", () => {
+    popup.classList.toggle("popup_opened");
+  });
+}
+
+/***********************************************************************************************************************/
 /* Main script */
 
 initCards();
 initEditProfilePopup();
 initAddCardPopup();
+initDisplayImagePopup();
