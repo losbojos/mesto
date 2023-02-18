@@ -10,8 +10,12 @@
     padding: 19px;
     box-sizing: border-box;
 
-    /*display: flex; */
-    display: none;
+    display: flex;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 600ms, visibility 600ms;
+
     flex-direction: column;
     align-items: center;
     justify-content: center;
