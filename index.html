@@ -74,7 +74,8 @@
             <button type="reset" aria-label="Закрыть окно"
                 class="button-close fullimage__button-close cursor-pointer"></button>
             <figure class="fullimage__figure">
-                <img class="fullimage__image" src="" alt="">
+                <img class="fullimage__image" src="./images/load-image-error.png" alt="фотография"
+                    onerror="this.onerror=null;this.src='./images/load-image-error.png';">
                 <figcaption class="fullimage__caption"></figcaption>
             </figure>
         </section>
@@ -82,7 +83,8 @@
 
     <template id="card-template">
         <article class="cards__card">
-            <img src="" alt="фотография" class="cards__foto">
+            <img src="./images/load-image-error.png" alt="фотография" class="cards__foto"
+                onerror="this.onerror=null;this.src='./images/load-image-error.png';">
             <button type="button" aria-label="Удалить карточку" class="cards__delete cursor-pointer"></button>
             <div class="cards__caption-container">
                 <h2 class="cards__caption overflow-ellipsis">Заголовок</h2>
