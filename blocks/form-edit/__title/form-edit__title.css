@@ -1,5 +1,5 @@
 /* FIGMA 320 design (default) */
-.form-edit-profile__title {
+.form-edit__title {
     font-weight: 900;
     font-size: 18px;
     line-height: 22px;
@@ -11,7 +11,7 @@
 
 /* NO FIGMA design */
 @media screen and (min-width: 768px) {
-    .form-edit-profile__title {
+    .form-edit__title {
         font-size: 21px;
         line-height: 26px;
     }
@@ -19,7 +19,7 @@
 
 /* FIGMA 1280 */
 @media screen and (min-width: 1024px) {
-    .form-edit-profile__title {
+    .form-edit__title {
         font-size: 24px;
         line-height: 29px;
     }

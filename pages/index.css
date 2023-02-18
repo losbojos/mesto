@@ -53,12 +53,12 @@
 
 @import url("../blocks/popup/popup.css");
 @import url("../blocks/popup/_opened/popup_opened.css");
-@import url("../blocks/profile-editor/profile-editor.css");
-@import url("../blocks/form-edit-profile/form-edit-profile.css");
-@import url("../blocks/form-edit-profile/__button-close/form-edit-profile__button-close.css");
-@import url("../blocks/form-edit-profile/__button-save/form-edit-profile__button-save.css");
-@import url("../blocks/form-edit-profile/__input/form-edit-profile__input.css");
-@import url("../blocks/form-edit-profile/__title/form-edit-profile__title.css");
+@import url("../blocks/editor/editor.css");
+@import url("../blocks/form-edit/form-edit.css");
+@import url("../blocks/form-edit/__button-close/form-edit__button-close.css");
+@import url("../blocks/form-edit/__button-save/form-edit__button-save.css");
+@import url("../blocks/form-edit/__input/form-edit__input.css");
+@import url("../blocks/form-edit/__title/form-edit__title.css");
 
 /********************************************************************************/
 

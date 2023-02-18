@@ -1,5 +1,5 @@
 /* FIGMA 320 design (default) */
-.profile-editor {
+.editor {
     background-color: #FFFFFF;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
@@ -16,7 +16,7 @@
 
 /* FIGMA 1280 */
 @media screen and (min-width: 1024px) {
-    .profile-editor {
+    .editor {
         padding: 34px 36px 37px;
     }
 }

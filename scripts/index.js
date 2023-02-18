@@ -87,13 +87,13 @@ function initEditProfilePopup() {
   const profileAbout = document.querySelector(".profile__about");
   const editProfilePopup = document.querySelector("#popup-edit-profile");
 
-  const inputName = editProfilePopup.querySelector("#form-edit-profile__input-name-id");
-  const inputAbout = editProfilePopup.querySelector("#form-edit-profile__input-about-id");
+  const inputName = editProfilePopup.querySelector("#profile-name-id");
+  const inputAbout = editProfilePopup.querySelector("#profile-about-id");
   const closeButton = editProfilePopup.querySelector(".button-close");
-  const formElement = editProfilePopup.querySelector(".form-edit-profile");
+  const formElement = editProfilePopup.querySelector(".form-edit");
 
   const toggleOpenPopup = () => {
-    let isOpened = editProfilePopup.classList.toggle("popup_opened");
+    const isOpened = editProfilePopup.classList.toggle("popup_opened");
     if (isOpened) {
       inputName.value = profileName.textContent;
       inputAbout.value = profileAbout.textContent;
@@ -119,10 +119,10 @@ function initAddCardPopup() {
 
   const popup = document.querySelector("#popup-add-card"); // by id
 
-  const inputImageTitle = popup.querySelector("#form-edit-profile__input-name-id");
-  const inputImageLink = popup.querySelector("#form-edit-profile__input-about-id");
+  const inputImageCaption = popup.querySelector("#image-caption-id");
+  const inputImageLink = popup.querySelector("#image-link-id");
   const closeButton = popup.querySelector(".button-close");
-  const formElement = popup.querySelector(".form-edit-profile");
+  const formElement = popup.querySelector(".form-edit");
 
   const toggleOpenAddCardPopup = () => {
     popup.classList.toggle("popup_opened");
@@ -131,7 +131,7 @@ function initAddCardPopup() {
   const handleFormSubmit = (evt) => {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.  
 
-    const newImageName = inputImageTitle.value;
+    const newImageName = inputImageCaption.value;
     const newImageLink = inputImageLink.value;
     addCard(newImageName, newImageLink, true);
     toggleOpenAddCardPopup();
