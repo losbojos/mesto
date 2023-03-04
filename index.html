@@ -41,14 +41,20 @@
 
     <section class="popup" id="popup-edit-profile">
         <div class="editor">
-            <form class="form-edit" name="form-edit-profile">
+            <form class="form-edit" name="form-edit-profile" novalidate>
                 <button type="reset" aria-label="Закрыть без сохранения изменений"
                     class="button-close form-edit__button-close cursor-pointer"></button>
                 <h2 class="form-edit__title">Редактировать профиль</h2>
-                <input type="text" class="form-edit__input" value="" placeholder="Имя" id="profile-name-id"
-                    name="profile-name">
-                <input type="text" class="form-edit__input" value="" placeholder="О себе" id="profile-about-id"
-                    name="profile-about">
+                <div class="form-edit__input-section">
+                    <input type="text" class="form-edit__input" value="" placeholder="Имя" id="profile-name-id"
+                        name="profile-name" required minlength="2" maxlength="40">
+                    <span class="form-edit__error" id="profile-name-id-error"></span>
+                </div>
+                <div class="form-edit__input-section">
+                    <input type="text" class="form-edit__input" value="" placeholder="О себе" id="profile-about-id"
+                        name="profile-about" required minlength="2" maxlength="200">
+                    <span class="form-edit__error" id="profile-about-id-error"></span>
+                </div>
                 <button type="submit" class="form-edit__button-save cursor-pointer">Сохранить</button>
             </form>
         </div>
@@ -56,14 +62,20 @@
 
     <section class="popup" id="popup-add-card">
         <div class="editor">
-            <form class="form-edit" name="form-add-card">
+            <form class="form-edit" name="form-add-card" novalidate>
                 <button type="reset" aria-label="Закрыть без сохранения изменений"
                     class="button-close form-edit__button-close cursor-pointer"></button>
                 <h2 class="form-edit__title">Новое место</h2>
-                <input type="text" class="form-edit__input" value="" placeholder="Название" id="image-caption-id"
-                    name="image-caption">
-                <input type="text" class="form-edit__input" value="" placeholder="Ссылка на картинку" id="image-link-id"
-                    name="image-link">
+                <div class="form-edit__input-section">
+                    <input type="text" class="form-edit__input" value="" placeholder="Название" id="image-caption-id"
+                        name="image-caption" required minlength="2" maxlength="30">
+                    <span class="form-edit__error" id="image-caption-id-error"></span>
+                </div>
+                <div class="form-edit__input-section">
+                    <input type="url" class="form-edit__input" value="" placeholder="Ссылка на картинку"
+                        id="image-link-id" name="image-link" required>
+                    <span class="form-edit__error" id="image-link-id-error"></span>
+                </div>
                 <button type="submit" class="form-edit__button-save cursor-pointer">Создать</button>
             </form>
         </div>
@@ -93,6 +105,8 @@
         </article>
     </template>
 
+    <script src="./scripts/consts.js"></script>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
 
 </body>

@@ -188,6 +188,8 @@ function initDisplayImagePopup() {
 
 function openPopup(popupWindow) {
   popupWindow.classList.add("popup_opened");
+  const form = popupWindow.querySelector('.form-edit');
+  validate(form, validationOptions); // Начальная валидация необходима на открытии формы, когда события изменения текста инпутов еще не сработали
 }
 
 function closePopup(popupWindow) {
@@ -202,3 +204,4 @@ initCards();
 initEditProfilePopup();
 initAddCardPopup();
 initDisplayImagePopup();
+enableValidation(validationOptions);
