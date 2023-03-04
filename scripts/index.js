@@ -179,6 +179,23 @@ function closeOnOverlayClick(evt) {
 }
 
 /***********************************************************************************************************************/
+
+function initDocument() {
+  document.addEventListener('keydown', (evt) => {
+
+    if (evt.key === 'Escape') {
+      const allPopups = document.querySelectorAll('.popup');
+      for (let i = 0; i < allPopups.length; i++) {
+        if (allPopups[i].classList.contains('popup_opened')) {
+          closePopup(allPopups[i]);
+          break;
+        }
+      }
+    }
+  });
+}
+
+/***********************************************************************************************************************/
 /* Main script */
 
 initCards();
@@ -186,3 +203,4 @@ initEditProfilePopup();
 initAddCardPopup();
 initDisplayImagePopup();
 enableValidation(validationOptions);
+initDocument();
