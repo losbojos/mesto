@@ -30,7 +30,6 @@ function toogleInputState(input, options) {
 		input.classList.add(options.inputInvalidClass);
 		errorElement.classList.add(options.inputErrorClass);
 		errorElement.textContent = input.validationMessage;
-		console.log(input.validationMessage);
 	}
 }
 

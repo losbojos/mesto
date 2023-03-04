@@ -41,34 +41,6 @@ function addCard(newCard, atTheTop) {
 /***********************************************************************************************************************/
 
 function initCards() {
-
-  const initialCards = [
-    {
-      name: 'Архыз',
-      link: './images/cards/01-Arhiz.jpg'
-    },
-    {
-      name: 'Кузбасс',
-      link: './images/cards/02-Kuzbass.JPG'
-    },
-    {
-      name: 'Новосибирск',
-      link: './images/cards/03-Novosibirsk.jpg'
-    },
-    {
-      name: 'Санкт-Петербург',
-      link: './images/cards/04-Sankt-Peterburg.jpg'
-    },
-    {
-      name: 'Новороссийск',
-      link: './images/cards/05-Novorossiysk.jpg'
-    },
-    {
-      name: 'Алтай',
-      link: './images/cards/06-Altay.JPG'
-    }
-  ];
-
   initialCards.forEach((value) => {
     addCard(createCard(value.name, value.link), false);
   });
@@ -129,6 +101,7 @@ function initEditProfilePopup() {
   document.querySelector(".profile__edit-button").addEventListener("click", openEditProfilePopup);
   closeButton.addEventListener("click", () => { closePopup(editProfilePopup); });
   formElement.addEventListener("submit", handleFormSubmit);
+  editProfilePopup.addEventListener("click", (evt) => { closeOnOverlayClick(evt); });
 }
 
 /***********************************************************************************************************************/
@@ -158,6 +131,7 @@ function initAddCardPopup() {
   document.querySelector(".profile__add-button").addEventListener("click", () => { openPopup(popupAddCard); });
   closeButton.addEventListener("click", () => { closePopup(popupAddCard); });
   formElement.addEventListener("submit", handleFormSubmit);
+  popupAddCard.addEventListener("click", (evt) => { closeOnOverlayClick(evt); });
 }
 
 /***********************************************************************************************************************/
@@ -182,6 +156,7 @@ function initDisplayImagePopup() {
   closeButton.addEventListener("click", () => {
     closePopup(popupDisplayImage);
   });
+  popupDisplayImage.addEventListener("click", (evt) => { closeOnOverlayClick(evt); });
 }
 
 /***********************************************************************************************************************/
@@ -189,13 +164,19 @@ function initDisplayImagePopup() {
 function openPopup(popupWindow) {
   popupWindow.classList.add("popup_opened");
   const form = popupWindow.querySelector('.form-edit');
-  validate(form, validationOptions); // Начальная валидация необходима на открытии формы, когда события изменения текста инпутов еще не сработали
+  if (form)
+    validate(form, validationOptions); // Начальная валидация необходима на открытии формы, когда события изменения текста инпутов еще не сработали
 }
 
 function closePopup(popupWindow) {
   popupWindow.classList.remove("popup_opened");
 }
 
+function closeOnOverlayClick(evt) {
+  if (evt.currentTarget === evt.target) {
+    closePopup(evt.currentTarget);
+  }
+}
 
 /***********************************************************************************************************************/
 /* Main script */
