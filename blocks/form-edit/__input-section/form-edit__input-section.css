@@ -1,6 +1,5 @@
 .form-edit__input-section {
-    position: relative;
-    margin: 30px 0 0;
+    margin: 0;
 }
 
 .form-edit__input-section:first-of-type {
