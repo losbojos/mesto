@@ -16,21 +16,46 @@ function setEventListeners(form, options) {
 			toggleButtonState(allInputs, buttonSave, options.disabledButtonClass);
 		});
 	});
+
+	form.addEventListener('reset', () => {
+
+		// `setTimeout` нужен для того, чтобы дождаться очищения формы (вызов уйдет в конце стэка) и только потом вызвать `toggleButtonState`
+		setTimeout(() => {
+			allInputs.forEach((input) => {
+				const errorElement = findErrorElementByInputElement(input, options);
+				hideError(input, errorElement, options);
+			});
+			toggleButtonState(allInputs, buttonSave, options.disabledButtonClass);
+		});
+
+	}, 0); // достаточно указать 0 миллисекунд, чтобы после `reset` уже сработало действие
+}
+
+function findErrorElementByInputElement(inputElement, options) {
+	return inputElement.closest(options.inputSectionSelector).querySelector(options.errorSelector);
 }
 
 function toogleInputState(input, options) {
-	const errorElement = input.closest(options.inputSectionSelector).querySelector(options.errorSelector);
+	const errorElement = findErrorElementByInputElement(input, options);
 
 	if (input.validity.valid) {
-		input.classList.remove(options.inputInvalidClass);
-		errorElement.classList.remove(options.inputErrorClass);
-		errorElement.textContent = '';
+		hideError(input, errorElement, options);
 	}
 	else {
-		input.classList.add(options.inputInvalidClass);
-		errorElement.classList.add(options.inputErrorClass);
-		errorElement.textContent = input.validationMessage;
+		showError(input, errorElement, options);
 	}
+}
+
+function showError(inputElement, errorElement, options) {
+	inputElement.classList.add(options.inputInvalidClass);
+	errorElement.classList.add(options.inputErrorClass);
+	errorElement.textContent = inputElement.validationMessage;
+}
+
+function hideError(inputElement, errorElement, options) {
+	inputElement.classList.remove(options.inputInvalidClass);
+	errorElement.classList.remove(options.inputErrorClass);
+	errorElement.textContent = '';
 }
 
 function toggleButtonState(inputs, button, disabledButtonClass) {
@@ -44,15 +69,4 @@ function toggleButtonState(inputs, button, disabledButtonClass) {
 		button.classList.add(disabledButtonClass);
 		button.setAttribute('disabled', true);
 	}
-}
-
-function validate(form, options) {
-	const allInputs = Array.from(form.querySelectorAll(options.inputSelector));
-	const buttonSave = form.querySelector(options.submitSelector);
-
-	allInputs.forEach((input) => {
-		toogleInputState(input, options);
-	});
-
-	toggleButtonState(allInputs, buttonSave, options.disabledButtonClass);
 }

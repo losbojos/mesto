@@ -74,7 +74,7 @@ function initPopup(popup) {
 
 /***********************************************************************************************************************/
 
-function initEditProfilePopup() {
+function initProfilePopup() {
 
   const currentProfileName = document.querySelector(".profile__name");
   const currentProfileAbout = document.querySelector(".profile__about");
@@ -83,9 +83,12 @@ function initEditProfilePopup() {
   const profileInputAbout = profilePopup.querySelector("#profile-about-id");
   const profileForm = profilePopup.querySelector(".form-edit");
 
-  const openEditProfilePopup = () => {
+  const openProfilePopup = () => {
+
+    profileForm.reset();
     profileInputName.value = currentProfileName.textContent;
     profileInputAbout.value = currentProfileAbout.textContent;
+
     openPopup(profilePopup);
   };
 
@@ -94,10 +97,11 @@ function initEditProfilePopup() {
 
     currentProfileName.textContent = profileInputName.value;
     currentProfileAbout.textContent = profileInputAbout.value;
+
     closePopup(profilePopup);
   }
 
-  document.querySelector(".profile__edit-button").addEventListener("click", openEditProfilePopup);
+  document.querySelector(".profile__edit-button").addEventListener("click", openProfilePopup);
   profileForm.addEventListener("submit", handleProfileFormSubmit);
   initPopup(profilePopup);
 }
@@ -109,6 +113,11 @@ function initAddCardPopup() {
   const addCardInputImageLink = addCardPopup.querySelector("#image-link-id");
   const addCardForm = addCardPopup.querySelector(".form-edit");
 
+  const openAddCardPopup = () => {
+    addCardForm.reset();
+    openPopup(addCardPopup);
+  };
+
   const handleFormSubmit = (evt) => {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.  
 
@@ -116,13 +125,10 @@ function initAddCardPopup() {
     const newImageLink = addCardInputImageLink.value;
     addCard(createCard(newImageName, newImageLink), true);
 
-    addCardInputImageCaption.value = "";
-    addCardInputImageLink.value = "";
-
     closePopup(addCardPopup);
   }
 
-  document.querySelector(".profile__add-button").addEventListener("click", () => { openPopup(addCardPopup); });
+  document.querySelector(".profile__add-button").addEventListener("click", openAddCardPopup);
   addCardForm.addEventListener("submit", handleFormSubmit);
   initPopup(addCardPopup);
 }
@@ -141,9 +147,6 @@ function openFullImagePopup(src, caption) {
 
 function openPopup(popupWindow) {
   popupWindow.classList.add("popup_opened");
-  const form = popupWindow.querySelector('.form-edit');
-  if (form) // не в каждом попапе есть форма
-    validate(form, validationOptions); // Начальная валидация необходима на открытии формы, когда события изменения текста инпутов еще не сработали
 }
 
 function closePopup(popupWindow) {
@@ -178,7 +181,7 @@ function initDocument() {
 
 initCards();
 
-initEditProfilePopup();
+initProfilePopup();
 initAddCardPopup();
 initPopup(fullImagePopup);
 
