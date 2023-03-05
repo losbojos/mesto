@@ -147,10 +147,12 @@ function openFullImagePopup(src, caption) {
 
 function openPopup(popupWindow) {
   popupWindow.classList.add("popup_opened");
+  document.addEventListener('keydown', closeByEscape);
 }
 
 function closePopup(popupWindow) {
   popupWindow.classList.remove("popup_opened");
+  document.removeEventListener('keydown', closeByEscape);
 }
 
 function closeOnOverlayClick(evt) {
@@ -161,21 +163,12 @@ function closeOnOverlayClick(evt) {
 
 /***********************************************************************************************************************/
 
-function initDocument() {
-  document.addEventListener('keydown', (evt) => {
-
-    if (evt.key === 'Escape') {
-      const allPopups = document.querySelectorAll('.popup');
-      for (let i = 0; i < allPopups.length; i++) {
-        if (allPopups[i].classList.contains('popup_opened')) {
-          closePopup(allPopups[i]);
-          break;
-        }
-      }
-    }
-  });
+function closeByEscape(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  }
 }
-
 /***********************************************************************************************************************/
 /* Main script */
 
@@ -186,4 +179,3 @@ initAddCardPopup();
 initPopup(fullImagePopup);
 
 enableValidation(validationOptions);
-initDocument();
